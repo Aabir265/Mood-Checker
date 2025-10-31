@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <title>Moody</title>
+        <body>
+            <main>
+                <h1>Feeling Moody?</h1>
+                <br>
+                <p>Let's check your mood!</p>
+                <img src="https://tse3.mm.bing.net/th/id/OIP.RqNNmIc1yqEtc6XRXm2YqgHaEo?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mood" width="300" height="200">
+                <br>
+                <input type="text" placeholder="Let us know how you feel today!" id="mood-input">
+                <button id="mood-button">Check Mood</button>
+                <div id="mood-output"></div>
+                </main>
+            <footer>
+                <h3>Stay positive and keep smiling! Made By Aabir Sharma with ❤️</h3>
+            </footer>
+            <style>
+                h1{
+                    color:deeppink;
+                    font-family:monaco,monospace;
+                    font-size:30px;
+                    font-style:italic;
+                    text-align:center;
+                    text-decoration: wavy;
+
+                }
+                body {
+                    background-color: lightblue;
+                    margin-top:50px;
+                }
+                main {
+                    background-color: yellowgreen;
+                    padding: 2px;
+                    border-radius: 5px;
+                    margin-top: 80px;
+                    box-shadow: 0 0 7px grey;
+                    height: 600px;
+                    width: 600px;
+                    position: relative;
+                    top: -20px;
+                    left:400px
+
+                    
+                }
+                p{
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    color:blue;
+                    text-align: center;
+                    text-decoration: wavy;
+                    font-size: 14px;
+                }
+                footer{
+                    color:purple;
+                    font-family:cursive;
+                    font-size:17px;
+                    text-align:center;
+                    border:20px solid transparent;
+                    border-radius:10px;
+                    padding: 10px;
+                    background-color: coral;
+                    margin-bottom:100px;
+                    position:relative;
+                    top:-40px;
+
+                }
+                input {
+                    background-color: grey;
+                    border-radius: 12px;
+                    padding: 10px;
+                    border:3px solid black;
+                    box-sizing: border-box;
+                    box-shadow: lightpink 0 0 6px;
+                    border-radius:20px;
+                    font-size: 9px;
+                    margin-top: 30px;
+                    margin-right: 50px;
+                    width:200px;
+                }
+                button {
+                    background-color: lightcoral;
+                    border-radius: 12px;
+                    box-sizing: 30px;
+                    padding: 12px;
+                    border:3px solid black;
+                    font-size: 9px;
+                    box-sizing: border-box;
+                    box-shadow:  0 0 6px green;
+                    transition: background 0.3s ease, transform 0.2s ease;
+                    margin-left: 50px;
+                    margin-bottom: 5px;
+                    width: 150px;
+                }
+                #mood-output{
+                    font-family: 'Arial', sans-serif;
+                    font-size: 20px;
+                    color: darkblue;
+                    margin-top: 20px;
+                    text-align: center;
+                }
+                button:active{
+                    transform: scale(0.95);
+                   
+                }
+                 button:hover{
+                    background-color: lightgrey;
+                    transform: scale(1.05);
+                    }
+                    input:hover{
+                    background-color: lightgrey;
+                    cursor:pointer;
+                    }
+                    img{
+                    display: block;
+                    margin-left:137px;
+                    }
+                    #mood-input{
+                    margin-left:60px;
+                    background-color: lightyellow;
+                    }
+                    input:click{
+                        border-color: aqua;
+                    }
+            </style>
+            <script>
+               function moody(){
+                let mood = document.querySelector("#mood-input").value;
+                const button = document.getElementById("#mood-button");
+                const output = document.querySelector("#mood-output");
+                output.textContent = "You are feeling " + mood + " today!";
+                if(mood.toLowerCase() === "happy" || mood.toLowerCase() === "excited"){
+                    output.textContent = "You are feeling " + mood + " today! Good to hear that! Keep smiling 😊";
+                    document.body.style.backgroundColor="lightblue";
+                }
+                else if(mood.toLowerCase() === "sad" || mood.toLowerCase() === "worried"){
+                    output.textContent += "No worries dear, you know when night comes then in the morning the Sun comes up! Be positive 🌞";
+                    document.body.style.backgroundColor="lightgrey";
+                }
+                else if(mood.toLowerCase() === "angry" || mood.toLowerCase() === "frustrated"){
+                    output.textContent += "Take a deep breath and try to relax. Everything will be okay! 🌈";
+                    document.body.style.backgroundColor="lightcoral";
+                }
+                else{
+                    output.textContent += "Thanks for sharing your mood!";
+                }
+               }
+               document.querySelector("#mood-button").addEventListener("click", moody);
+
+            </script>
+            </body>
+</html>
